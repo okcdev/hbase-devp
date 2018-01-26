@@ -15,7 +15,7 @@ import java.io.IOException;
  */
 public class HbDemo {
 
-    public void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
 
         Configuration conf = HBaseConfiguration.create();
 
@@ -28,6 +28,11 @@ public class HbDemo {
 
         //TODO something here
         //put, get, scan
+        System.out.println("**************************************");
+        System.out.println("**************************************");
+        System.out.println("****** here is to do something *******");
+        System.out.println("**************************************");
+        System.out.println("***************************************");
 
         table.close();
         connection.close();

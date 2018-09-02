@@ -21,9 +21,9 @@
     </parent>
 
     <properties>
-        <hadoop.version>2.7.0</hadoop.version>
-        <zookeeper.version>3.4.8</zookeeper.version>
-        <hbase.version>1.1.11</hbase.version>
+        <hadoop.version>2.9.1</hadoop.version>
+        <zookeeper.version>3.4.12</zookeeper.version>
+        <hbase.version>1.2.6.1</hbase.version>
         <commons-lang3.version>3.3.2</commons-lang3.version>
         <slf4j.version>1.7.7</slf4j.version>
     </properties>

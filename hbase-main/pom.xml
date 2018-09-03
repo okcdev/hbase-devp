@@ -58,7 +58,7 @@
                 <archive>
                     <manifest>
                         <!-- 此处指定main方法入口的class -->
-                        <mainClass>com.rbs.cn.main.HbDemo</mainClass>
+                        <mainClass>com.rbs.cn.main.Main</mainClass>
                     </manifest>
                 </archive>
             </configuration>

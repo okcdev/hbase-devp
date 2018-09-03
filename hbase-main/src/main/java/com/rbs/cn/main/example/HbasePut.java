@@ -1,8 +1,12 @@
-package com.rbs.cn.main;
+/*
+ * File: HbasePut.java
+ * Created By: fengtao.xue@gausscode.com
+ * Date: 2018-09-03
+ */
 
-import com.rbs.cn.main.utils.HbaseConf;
+package com.rbs.cn.main.example;
+
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.apache.hadoop.hbase.TableName;
 import org.apache.hadoop.hbase.client.Connection;
 import org.apache.hadoop.hbase.client.ConnectionFactory;
@@ -15,15 +19,13 @@ import utils.HBaseHelper;
 
 import java.io.IOException;
 
+
 /**
- * Created by fengtao.xue on 2018/1/26.
+ * @author fengtao.xue
  */
-public class HbDemo {
-    static Logger logger = LoggerFactory.getLogger(HbDemo.class);
-
-    public static void main(String[] args) throws IOException {
-
-        Configuration conf = HbaseConf.init();
+public class HbasePut {
+    static Logger logger = LoggerFactory.getLogger(HbasePut.class);
+    public void put(Configuration conf) throws IOException {
         // ^^ PutExample
         HBaseHelper helper = HBaseHelper.getHelper(conf);
         helper.dropTable("testtable");
@@ -45,6 +47,5 @@ public class HbDemo {
         // ^^ PutExample
         helper.close();
         // vv PutExample
-        //System.exit(0);
     }
 }

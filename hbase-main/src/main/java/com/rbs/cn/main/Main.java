@@ -8,6 +8,7 @@ package com.rbs.cn.main;
 
 import com.rbs.cn.main.example.HbaseGet;
 import com.rbs.cn.main.example.HbasePut;
+import com.rbs.cn.main.example.PutList;
 import com.rbs.cn.main.utils.HbaseConf;
 import org.apache.hadoop.conf.Configuration;
 import org.slf4j.Logger;
@@ -29,8 +30,11 @@ public class Main {
         /*HbasePut hbasePut = new HbasePut();
         hbasePut.put(conf);*/
 
-        HbaseGet hbaseGet = new HbaseGet();
-        hbaseGet.get(conf);
+        /*HbaseGet hbaseGet = new HbaseGet();
+        hbaseGet.get(conf);*/
+
+        PutList putList = new PutList();
+        putList.run(conf);
 
     }
 }

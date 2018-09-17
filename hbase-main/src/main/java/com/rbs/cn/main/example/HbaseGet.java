@@ -29,6 +29,7 @@ public class HbaseGet {
         if (!helper.existsTable("testtable")) {
             helper.createTable("testtable", "colfam1");
         }
+        //Connection connection = ConnectionFactory.createConnection(conf);
         // vv GetExample
         Table table = connection.getTable(TableName.valueOf("testtable")); // co GetExample-2-NewTable Instantiate a new table reference.
 
@@ -44,7 +45,7 @@ public class HbaseGet {
         System.out.println("Value: " + Bytes.toString(val)); // co GetExample-7-Print Print out the value while converting it back.
 
         table.close(); // co GetExample-8-Close Close the table and connection instances to free resources.
-        connection.close();
+        //connection.close();
         // ^^ GetExample
         helper.close();
     }

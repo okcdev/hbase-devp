@@ -38,8 +38,9 @@ public class Main {
         hbaseGet.get(HbaseEnv.conf, HbaseEnv.connection);
         logger.info("****************do get successfully*********");
 
-        /*PutList putList = new PutList();
-        putList.run(HbaseEnv.conf, HbaseEnv.connection);*/
-
+        logger.info("*****************do PutList start **************");
+        PutList putList = new PutList();
+        putList.run(HbaseEnv.conf, HbaseEnv.connection);
+        logger.info("****************do PutList successfully*********");
     }
 }

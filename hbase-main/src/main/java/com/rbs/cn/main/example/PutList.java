@@ -36,7 +36,7 @@ public class PutList {
 
         helper.dropTable(tbName);
         helper.createTable(tbName,"cf1", "cf2");
-
+        //Connection connection = ConnectionFactory.createConnection(conf);
         Table table = connection.getTable(TableName.valueOf(tbName));
 
         List<Put> putList = new ArrayList<Put>();

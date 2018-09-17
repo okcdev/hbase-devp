@@ -7,9 +7,8 @@
 package com.rbs.cn.main;
 
 import com.rbs.cn.main.example.HbaseGet;
-import com.rbs.cn.main.example.HbasePut;
 import com.rbs.cn.main.example.PutList;
-import com.rbs.cn.main.utils.HbaseConf;
+import com.rbs.cn.main.utils.HbaseEnv;
 import org.apache.hadoop.conf.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,16 +24,22 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        Configuration conf = HbaseConf.init();
+        logger.info("*************init HbaseEnv******************");
+        if (!HbaseEnv.initFlag){
+            HbaseEnv.init();
+        }
+        logger.info("**********init HbaseEnv successfully********");
 
         /*HbasePut hbasePut = new HbasePut();
         hbasePut.put(conf);*/
 
-        /*HbaseGet hbaseGet = new HbaseGet();
-        hbaseGet.get(conf);*/
+        logger.info("*****************do get start **************");
+        HbaseGet hbaseGet = new HbaseGet();
+        hbaseGet.get(HbaseEnv.conf, HbaseEnv.connection);
+        logger.info("****************do get successfully*********");
 
-        PutList putList = new PutList();
-        putList.run(conf);
+        /*PutList putList = new PutList();
+        putList.run(HbaseEnv.conf, HbaseEnv.connection);*/
 
     }
 }

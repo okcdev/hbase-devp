@@ -23,14 +23,13 @@ import java.io.IOException;
 public class HbaseGet {
     static Logger logger = LoggerFactory.getLogger(HbaseGet.class);
 
-    public void get(Configuration conf) throws IOException {
+    public void get(Configuration conf, Connection connection) throws IOException {
         // ^^ GetExample
         HBaseHelper helper = HBaseHelper.getHelper(conf);
         if (!helper.existsTable("testtable")) {
             helper.createTable("testtable", "colfam1");
         }
         // vv GetExample
-        Connection connection = ConnectionFactory.createConnection(conf);
         Table table = connection.getTable(TableName.valueOf("testtable")); // co GetExample-2-NewTable Instantiate a new table reference.
 
         Get get = new Get(Bytes.toBytes("row1")); // co GetExample-3-NewGet Create get with specific row.

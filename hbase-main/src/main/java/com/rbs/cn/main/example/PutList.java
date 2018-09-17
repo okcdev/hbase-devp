@@ -6,6 +6,7 @@
 
 package com.rbs.cn.main.example;
 
+import com.rbs.cn.main.utils.HbaseEnv;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.TableName;
 import org.apache.hadoop.hbase.client.Connection;
@@ -28,7 +29,7 @@ import java.util.List;
 public class PutList {
     static Logger logger = LoggerFactory.getLogger(PutList.class);
 
-    public void run(Configuration conf) throws IOException {
+    public void run(Configuration conf, Connection connection) throws IOException {
         HBaseHelper helper = HBaseHelper.getHelper(conf);
 
         String tbName = "rbs";
@@ -36,7 +37,6 @@ public class PutList {
         helper.dropTable(tbName);
         helper.createTable(tbName,"cf1", "cf2");
 
-        Connection connection = ConnectionFactory.createConnection(conf);
         Table table = connection.getTable(TableName.valueOf(tbName));
 
         List<Put> putList = new ArrayList<Put>();

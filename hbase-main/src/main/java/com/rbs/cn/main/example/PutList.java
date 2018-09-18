@@ -29,15 +29,15 @@ import java.util.List;
 public class PutList {
     static Logger logger = LoggerFactory.getLogger(PutList.class);
 
-    public void run(Configuration conf, Connection connection) throws IOException {
-        HBaseHelper helper = HBaseHelper.getHelper(conf);
+    public void run(HBaseHelper helper) throws IOException {
+        //HBaseHelper helper = HBaseHelper.getHelper(conf);
 
         String tbName = "rbs";
 
         helper.dropTable(tbName);
         helper.createTable(tbName,"cf1", "cf2");
         //Connection connection = ConnectionFactory.createConnection(conf);
-        Table table = connection.getTable(TableName.valueOf(tbName));
+        Table table = helper.getConnection().getTable(TableName.valueOf(tbName));
 
         List<Put> putList = new ArrayList<Put>();
 
@@ -60,7 +60,6 @@ public class PutList {
 
         table.put(putList);
         table.close();
-        connection.close();
         helper.close();
     }
 }

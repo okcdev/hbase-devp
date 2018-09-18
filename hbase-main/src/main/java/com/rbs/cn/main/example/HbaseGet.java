@@ -23,15 +23,15 @@ import java.io.IOException;
 public class HbaseGet {
     static Logger logger = LoggerFactory.getLogger(HbaseGet.class);
 
-    public void get(Configuration conf, Connection connection) throws IOException {
+    public void get(HBaseHelper helper) throws IOException {
         // ^^ GetExample
-        HBaseHelper helper = HBaseHelper.getHelper(conf);
+        //HBaseHelper helper = HBaseHelper.getHelper(conf);
         if (!helper.existsTable("testtable")) {
             helper.createTable("testtable", "colfam1");
         }
         //Connection connection = ConnectionFactory.createConnection(conf);
         // vv GetExample
-        Table table = connection.getTable(TableName.valueOf("testtable")); // co GetExample-2-NewTable Instantiate a new table reference.
+        Table table = helper.getConnection().getTable(TableName.valueOf("testtable")); // co GetExample-2-NewTable Instantiate a new table reference.
 
         Get get = new Get(Bytes.toBytes("row1")); // co GetExample-3-NewGet Create get with specific row.
 
@@ -45,7 +45,6 @@ public class HbaseGet {
         System.out.println("Value: " + Bytes.toString(val)); // co GetExample-7-Print Print out the value while converting it back.
 
         table.close(); // co GetExample-8-Close Close the table and connection instances to free resources.
-        //connection.close();
         // ^^ GetExample
         helper.close();
     }

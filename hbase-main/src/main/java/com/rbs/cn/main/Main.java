@@ -35,12 +35,13 @@ public class Main {
 
         logger.info("*****************do get start **************");
         HbaseGet hbaseGet = new HbaseGet();
-        hbaseGet.get(HbaseEnv.conf, HbaseEnv.connection);
+        hbaseGet.get(HbaseEnv.helper);
         logger.info("****************do get successfully*********");
 
         logger.info("*****************do PutList start **************");
-        PutList putList = new PutList();
-        putList.run(HbaseEnv.conf, HbaseEnv.connection);
+        /*PutList putList = new PutList();
+        putList.run(HbaseEnv.helper);*/
         logger.info("****************do PutList successfully*********");
+        logger.info("connection:{}", HbaseEnv.helper.getConnection());
     }
 }

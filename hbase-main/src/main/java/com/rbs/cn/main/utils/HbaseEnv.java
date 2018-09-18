@@ -12,6 +12,7 @@ import org.apache.hadoop.hbase.client.Connection;
 import org.apache.hadoop.hbase.client.ConnectionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import utils.HBaseHelper;
 
 import java.io.IOException;
 
@@ -24,6 +25,7 @@ public class HbaseEnv {
 
     public static Configuration conf = null;
     public static Connection connection = null;
+    public static HBaseHelper helper = null;
     public static boolean initFlag = false;
 
     public static boolean init() throws IOException {
@@ -33,6 +35,7 @@ public class HbaseEnv {
             conf.set("hbase.zookeeper.property.clientPort", "2180");
             //conf.set("hbase.master", "localhost:9001");
             connection = ConnectionFactory.createConnection(conf);
+            helper = HBaseHelper.getHelper(conf);
             initFlag = true;
         }
         return initFlag;

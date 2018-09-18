@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89c6c664-0e05-4df9-a5b0-dbf873fd5f07" name="Default" comment="bugfix for HbaseConf">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/example/HbaseGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/example/HbaseGet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/example/PutList.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/example/PutList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/utils/HbaseEnv.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/utils/HbaseEnv.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbase-main/target/archive-tmp/hbase-main-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/hbase-main/target/archive-tmp/hbase-main-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbase-main/target/classes/com/rbs/cn/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/hbase-main/target/classes/com/rbs/cn/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbase-main/target/classes/com/rbs/cn/main/example/HbaseGet.class" beforeDir="false" afterPath="$PROJECT_DIR$/hbase-main/target/classes/com/rbs/cn/main/example/HbaseGet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbase-main/target/hbase-main-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/hbase-main/target/hbase-main-1.0-SNAPSHOT.jar" afterDir="false" />
-    </list>
+    <list default="true" id="89c6c664-0e05-4df9-a5b0-dbf873fd5f07" name="Default" comment="bugfix for HbaseConf" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/hbase-commons/target/" />
@@ -37,8 +27,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="41" column="42" lean-forward="true" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+            <state relative-caret-position="570">
+              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
             </state>
           </provider>
         </entry>
@@ -414,7 +404,7 @@
       <workItem from="1537151475255" duration="2983000" />
       <workItem from="1537164554816" duration="729000" />
       <workItem from="1537165785864" duration="3734000" />
-      <workItem from="1537242275975" duration="3615000" />
+      <workItem from="1537242275975" duration="3715000" />
     </task>
     <task id="LOCAL-00001" summary="bugfix for HbaseConf">
       <created>1535966683475</created>
@@ -434,10 +424,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45298000" />
+    <option name="totallyTimeSpent" value="45398000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -780,8 +771,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="41" column="42" lean-forward="true" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+        <state relative-caret-position="570">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
         </state>
       </provider>
     </entry>

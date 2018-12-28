@@ -6,8 +6,7 @@
 
 package com.rbs.cn.main;
 
-import com.rbs.cn.main.example.AppendExample;
-import com.rbs.cn.main.example.HbaseGet;
+import com.rbs.cn.main.example.ClientBasicOpt;
 import com.rbs.cn.main.utils.HbaseEnv;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,20 +28,22 @@ public class Main {
         }
         logger.info("**********init HbaseEnv successfully********");
 
-        /*HbasePut hbasePut = new HbasePut();
-        hbasePut.put(conf);*/
+        ClientBasicOpt clientBasicOpt= new ClientBasicOpt();
 
-        /*logger.info("*****************do get start **************");
-        HbaseGet hbaseGet = new HbaseGet();
-        hbaseGet.get(HbaseEnv.helper);
-        logger.info("****************do get successfully*********");*/
+        /*logger.info("******************** do put start ********************");
+        clientBasicOpt.put(HbaseEnv.conf);
+        logger.info("******************** do put successfully ***************");*/
 
-        /*logger.info("*****************do PutList start **************");
-        PutList putList = new PutList();
-        putList.run(HbaseEnv.helper);
-        logger.info("****************do PutList successfully*********");*/
+        /*logger.info("******************** do get start ********************");
+        clientBasicOpt.get(HbaseEnv.helper);
+        logger.info("********************** do get successfully *************");*/
 
-        AppendExample append = new AppendExample();
-        append.run(HbaseEnv.conf);
+        /*logger.info("******************** do PutList start ****************");
+        clientBasicOpt.putList(HbaseEnv.helper);
+        logger.info("********************* do PutList successfully **********");*/
+
+        logger.info("******************** do append start ****************");
+        clientBasicOpt.append(HbaseEnv.conf);
+        logger.info("********************* do append successfully **********");
     }
 }

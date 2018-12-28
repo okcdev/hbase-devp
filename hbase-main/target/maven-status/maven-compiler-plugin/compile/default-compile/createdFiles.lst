@@ -1,6 +1,4 @@
-com\rbs\cn\main\example\HbaseGet.class
 com\rbs\cn\main\Main.class
-com\rbs\cn\main\example\HbasePut.class
-com\rbs\cn\main\example\AppendExample.class
-com\rbs\cn\main\example\PutList.class
+com\rbs\cn\main\example\ClientBasicOpt$1.class
+com\rbs\cn\main\example\ClientBasicOpt.class
 com\rbs\cn\main\utils\HbaseEnv.class

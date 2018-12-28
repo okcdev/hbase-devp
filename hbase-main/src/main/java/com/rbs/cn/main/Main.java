@@ -42,8 +42,12 @@ public class Main {
         clientBasicOpt.putList(HbaseEnv.helper);
         logger.info("********************* do PutList successfully **********");*/
 
-        logger.info("******************** do append start ****************");
+        /*logger.info("******************** do append start ****************");
         clientBasicOpt.append(HbaseEnv.conf);
-        logger.info("********************* do append successfully **********");
+        logger.info("********************* do append successfully **********");*/
+
+        logger.info("******************** do batchCallBack start ****************");
+        clientBasicOpt.batchCallBack(HbaseEnv.helper);
+        logger.info("********************* do batchCallBack successfully **********");
     }
 }

@@ -6,9 +6,11 @@
 
 package com.rbs.cn.main.example;
 
+import javafx.scene.control.Tab;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.TableName;
 import org.apache.hadoop.hbase.client.*;
+import org.apache.hadoop.hbase.client.coprocessor.Batch;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -155,6 +157,65 @@ public class ClientBasicOpt {
         helper.dump("testtable", new String[]{"row1"}, null, null);
         table.close();
         connection.close();
+        helper.close();
+    }
+
+    public void batchCallBack(HBaseHelper helper) throws IOException {
+        //delete testtable if exist
+        helper.dropTable("testtable");
+        //create testtable
+        helper.createTable("testtable", "colfam1", "colfam2");
+        helper.put("testtable",
+                new String[] {"row1"},
+                new String[] {"colfam1"},
+                new String[] {"qaul1","qaul2","qaul3"},
+                new long[] {1,2,3},
+                new String[] {"val1","val2","val3"});
+        logger.info("Befor batch call...");
+        helper.dump("testtable", new String[]{"row1", "row2"}, null, null);
+
+        Table table = helper.getConnection().getTable(TableName.valueOf("testtable"));
+
+        //create a batchCallbackExample
+        List<Row> batch = new ArrayList<Row>();
+
+        Put put = new Put(Bytes.toBytes("row2"));
+        put.addColumn(Bytes.toBytes("colfam2"), Bytes.toBytes("qual1"), 4, Bytes.toBytes("val5"));
+        batch.add(put);
+
+        Get get1 = new Get(Bytes.toBytes("row1"));
+        get1.addColumn(Bytes.toBytes("colfam1"),Bytes.toBytes("qual1"));
+        batch.add(get1);
+
+        Delete delete = new Delete(Bytes.toBytes("row1"));
+        delete.addColumn(Bytes.toBytes("colfam1"), Bytes.toBytes("qual2"));
+        batch.add(delete);
+
+        /*Get get2 = new Get(Bytes.toBytes("row2"));
+        get2.addFamily(Bytes.toBytes("BOGUS"));
+        batch.add(get2);*/
+
+        Object[] results = new Object[batch.size()];
+        try {
+            table.batchCallback(batch, results, new Batch.Callback<Result>() {
+                @Override
+                public void update(byte[] region, byte[] row, Result result) {
+                    System.out.println("Received callback for row[" +
+                            Bytes.toString(row) + "] -> " + result);
+                }
+            });
+        }catch (Exception e){
+            logger.error("Error: {}\n{}", e.getMessage(), e.getStackTrace());
+        }
+
+        for (int i = 0; i < results.length; i++){
+            logger.debug("Result:{},type = {}", i, results[i].getClass().getSimpleName() + results[i]);
+        }
+
+        table.close();
+        logger.info("After batch call...");
+        helper.dump("testtable", new String[] {"row1", "row2"}, null, null);
+        helper.getConnection().close();
         helper.close();
     }
 }

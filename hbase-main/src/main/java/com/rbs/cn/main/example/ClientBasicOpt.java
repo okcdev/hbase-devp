@@ -16,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import utils.HBaseHelper;
 
+import javax.swing.text.TabExpander;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -215,6 +216,52 @@ public class ClientBasicOpt {
         table.close();
         logger.info("After batch call...");
         helper.dump("testtable", new String[] {"row1", "row2"}, null, null);
+        helper.getConnection().close();
+        helper.close();
+    }
+
+    public void batchSameRow(HBaseHelper helper) throws IOException {
+        helper.dropTable("testtable");
+        helper.createTable("testtable", "colfam1");
+        helper.put("testtable", "row1", "colfam1", "qual1", 1L, "vals");
+        logger.info("Before batch call...");
+        helper.dump("testtable", new String[] {"row1"}, null, null);
+
+        Table table = helper.getConnection().getTable(TableName.valueOf("testtable"));
+
+        List<Row> batch = new ArrayList<Row>();
+
+        Put put = new Put(Bytes.toBytes("row1"));
+        put.addColumn(Bytes.toBytes("colfam1"), Bytes.toBytes("qual1"), 2L, Bytes.toBytes("val2"));
+        batch.add(put);
+
+        Get get1 = new Get(Bytes.toBytes("row1"));
+        get1.addColumn(Bytes.toBytes("colfam1"), Bytes.toBytes("qual1"));
+        batch.add(get1);
+
+        Delete delete = new Delete(Bytes.toBytes("row1"));
+        delete.addColumn(Bytes.toBytes("colfam1"), Bytes.toBytes("qual1"), 3L);
+        batch.add(delete);
+
+        Get get2 = new Get(Bytes.toBytes("row1"));
+        get2.addColumn(Bytes.toBytes("colfam1"), Bytes.toBytes("qual1"));
+        batch.add(get2);
+
+        Object[] results = new Object[batch.size()];
+        try {
+            table.batch(batch, results);
+        } catch (InterruptedException e) {
+            logger.error("Error: {}\n{}", e.getMessage(), e.getStackTrace());
+        }
+
+        for (int i = 0; i < results.length; i++) {
+            System.out.println("Result[" + i + "]: type = " +
+                    results[i].getClass().getSimpleName() + "; " + results[i]);
+        }
+
+        table.close();
+        logger.info("After batch call");
+        helper.dump("testtable", new String[] {"row1"}, null, null);
         helper.getConnection().close();
         helper.close();
     }

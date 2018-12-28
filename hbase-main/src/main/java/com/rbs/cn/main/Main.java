@@ -46,8 +46,12 @@ public class Main {
         clientBasicOpt.append(HbaseEnv.conf);
         logger.info("********************* do append successfully **********");*/
 
-        logger.info("******************** do batchCallBack start ****************");
+        /*logger.info("******************** do batchCallBack start ****************");
         clientBasicOpt.batchCallBack(HbaseEnv.helper);
-        logger.info("********************* do batchCallBack successfully **********");
+        logger.info("********************* do batchCallBack successfully **********");*/
+
+        logger.info("******************** do batchSameRow start ****************");
+        clientBasicOpt.batchSameRow(HbaseEnv.helper);
+        logger.info("********************* do batchSameRow successfully **********");
     }
 }

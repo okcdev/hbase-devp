@@ -53,5 +53,9 @@ public class Main {
         logger.info("******************** do batchSameRow start ****************");
         clientBasicOpt.batchSameRow(HbaseEnv.helper);
         logger.info("********************* do batchSameRow successfully **********");
+
+        logger.info("******************** do bufferedMutator start ****************");
+        clientBasicOpt.bufferedMutator(HbaseEnv.helper);
+        logger.info("********************* do bufferedMutator successfully **********");
     }
 }

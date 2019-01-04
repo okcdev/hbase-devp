@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89c6c664-0e05-4df9-a5b0-dbf873fd5f07" name="Default" comment="bugfix for HbaseConf">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/example/ClientBasicOpt.java" beforeDir="false" afterPath="$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/example/ClientBasicOpt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hbase-main/target/archive-tmp/hbase-main-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/hbase-main/target/archive-tmp/hbase-main-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hbase-main/target/classes/com/rbs/cn/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/hbase-main/target/classes/com/rbs/cn/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hbase-main/target/hbase-main-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/hbase-main/target/hbase-main-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hbase-main/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/hbase-main/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,8 +26,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="53" column="53" lean-forward="true" selection-start-line="53" selection-start-column="53" selection-end-line="53" selection-end-column="53" />
+            <state>
+              <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -33,12 +38,8 @@
       <file leaf-file-name="ClientBasicOpt.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/example/ClientBasicOpt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="248" lean-forward="true" selection-start-line="248" selection-end-line="248" />
-              <folding>
-                <element signature="e#8066#8372#0" expanded="true" />
-                <element signature="e#8371#8372#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="370">
+              <caret line="214" column="9" lean-forward="true" selection-start-line="214" selection-start-column="9" selection-end-line="214" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -74,8 +75,9 @@
         <option value="$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/example/PutList.java" />
         <option value="$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/example/Append.java" />
         <option value="$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/example/AppendExample.java" />
-        <option value="$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/Main.java" />
         <option value="$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/example/ClientBasicOpt.java" />
+        <option value="$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/Main.java" />
+        <option value="$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/example/SortTest.java" />
       </list>
     </option>
   </component>
@@ -109,8 +111,8 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -120,9 +122,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -171,12 +172,23 @@
               <item name="hbase-main" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hbase-devp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hbase-devp" type="462c0819:PsiDirectoryNode" />
+              <item name="hbase-main" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -372,7 +384,10 @@
       <workItem from="1542717990579" duration="253000" />
       <workItem from="1545961674144" duration="369000" />
       <workItem from="1545962309938" duration="8850000" />
-      <workItem from="1545979851158" duration="3975000" />
+      <workItem from="1545979851158" duration="4985000" />
+      <workItem from="1546050447983" duration="3998000" />
+      <workItem from="1546392607037" duration="2300000" />
+      <workItem from="1546567099168" duration="321000" />
     </task>
     <task id="LOCAL-00001" summary="bugfix for HbaseConf">
       <created>1535966683475</created>
@@ -392,10 +407,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60593000" />
+    <option name="totallyTimeSpent" value="68222000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -408,10 +424,10 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3295082" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27480915" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.2739274" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25586355" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2655068" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -448,7 +464,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/example/PutList.java" />
     <entry file="file://$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/example/HbaseGet.java" />
     <entry file="file://$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -625,13 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hbase-main/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="429">
@@ -654,9 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="25" column="36" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#1251#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -674,24 +679,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/example/SortTest.java" />
     <entry file="file://$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="53" column="53" lean-forward="true" selection-start-line="53" selection-start-column="53" selection-end-line="53" selection-end-column="53" />
+        <state>
+          <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hbase-main/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hbase-main/src/main/java/com/rbs/cn/main/example/ClientBasicOpt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="248" lean-forward="true" selection-start-line="248" selection-end-line="248" />
-          <folding>
-            <element signature="e#8066#8372#0" expanded="true" />
-            <element signature="e#8371#8372#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="370">
+          <caret line="214" column="9" lean-forward="true" selection-start-line="214" selection-start-column="9" selection-end-line="214" selection-end-column="9" />
         </state>
       </provider>
     </entry>

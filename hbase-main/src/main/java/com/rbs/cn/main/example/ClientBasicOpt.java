@@ -20,6 +20,7 @@ import javax.swing.text.TabExpander;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.*;
 
 
 /**
@@ -264,5 +265,58 @@ public class ClientBasicOpt {
         helper.dump("testtable", new String[] {"row1"}, null, null);
         helper.getConnection().close();
         helper.close();
+    }
+
+    public void bufferedMutator(HBaseHelper helper) throws IOException {
+        int POOL_SIZE = 10;
+        int TASK_COUNT = 100;
+        TableName TABLE = TableName.valueOf("testtable");
+        final byte[] FAMILY = Bytes.toBytes("colfam1");
+
+        helper.dropTable("testtable");
+        helper.createTable("testtable", "colfam1");
+
+        BufferedMutator.ExceptionListener listener = new BufferedMutator.ExceptionListener() {
+            @Override
+            public void onException(RetriesExhaustedWithDetailsException e, BufferedMutator bufferedMutator) throws RetriesExhaustedWithDetailsException {
+                for (int i = 0; i < e.getNumExceptions(); i++){
+                    logger.info("Faild to send put:{}", e.getRow(i));
+                }
+            }
+        };
+
+        BufferedMutatorParams params = new BufferedMutatorParams(TABLE).listener(listener);
+
+        try {
+            final BufferedMutator mutator = helper.getConnection().getBufferedMutator(params);
+
+            ExecutorService workerPool = Executors.newFixedThreadPool(POOL_SIZE);
+            List<Future<Void>> futures = new ArrayList<Future<Void>>(TASK_COUNT);
+
+            for (int i = 0; i < TASK_COUNT; i++){
+                futures.add(workerPool.submit(new Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Put p = new Put(Bytes.toBytes("row1"));
+                        p.addColumn(FAMILY, Bytes.toBytes("qual1"), Bytes.toBytes("val1"));
+                        mutator.mutate(p);
+                        return null;
+                    }
+                }));
+            }
+
+            for (Future<Void> f : futures){
+                f.get(5, TimeUnit.MINUTES);
+            }
+            workerPool.shutdown();
+        }catch (IOException e){
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (TimeoutException e) {
+            e.printStackTrace();
+        }
     }
 }

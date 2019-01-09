@@ -50,12 +50,16 @@ public class Main {
         clientBasicOpt.batchCallBack(HbaseEnv.helper);
         logger.info("********************* do batchCallBack successfully **********");*/
 
-        logger.info("******************** do batchSameRow start ****************");
+        /*logger.info("******************** do batchSameRow start ****************");
         clientBasicOpt.batchSameRow(HbaseEnv.helper);
-        logger.info("********************* do batchSameRow successfully **********");
+        logger.info("********************* do batchSameRow successfully **********");*/
+
+        /*logger.info("******************** do bufferedMutator start ****************");
+        clientBasicOpt.bufferedMutator(HbaseEnv.helper);
+        logger.info("********************* do bufferedMutator successfully **********");*/
 
         logger.info("******************** do bufferedMutator start ****************");
-        clientBasicOpt.bufferedMutator(HbaseEnv.helper);
+        clientBasicOpt.cellComparator(HbaseEnv.helper);
         logger.info("********************* do bufferedMutator successfully **********");
     }
 }
